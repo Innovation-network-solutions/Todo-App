@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="container pt-5">
+        <div class="col-md-6 col-lg-6 p-0" style="position: absolute; bottom: 50px;">
+            <!-- To Do Form -->
+            <form action="{% url 'edit_task' get_task.pk %}" method="post" style="width: 500; margin: auto">
+                {% csrf_token %}
+                <div class="form-group">
+                            <span style="display: flex;">
+                                <input name="task" type="text" class="form-control" placeholder="Add a task" value="{{get_task.task}}">
+                                <button class="btn btn-primary" style="width: 200px;"><i class="fa fa-plus"></i> Add</button>
+                            </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
